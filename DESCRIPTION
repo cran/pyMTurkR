@@ -1,7 +1,7 @@
 Package: pyMTurkR
 Type: Package
 Title: A Client for the 'MTurk' Requester API
-Version: 1.1
+Version: 1.1.4
 Authors@R: c(person("Tyler", "Burleigh",
                     role = c("aut", "cre"), 
                     email = "tylerburleigh@gmail.com",
@@ -21,9 +21,9 @@ Encoding: UTF-8
 LazyData: true
 Imports: reticulate, curl, stats, utils, XML
 RoxygenNote: 6.1.1
-Suggests: testthat (>= 2.1.0), covr
+Suggests: testthat (>= 2.1.0), covr, knitr, rmarkdown
 NeedsCompilation: no
-Packaged: 2019-09-04 23:31:12 UTC; tyler
+Packaged: 2020-02-04 12:50:35 UTC; tyler
 Author: Tyler Burleigh [aut, cre] (https://twitter.com/tylerburleigh),
   Thomas J. Leeper [aut] (<https://orcid.org/0000-0003-4097-6326>),
   Solomon Messing [ctb],
@@ -31,4 +31,4 @@ Author: Tyler Burleigh [aut, cre] (https://twitter.com/tylerburleigh),
   Jonathan Chang [ctb],
   Andrew Brown [ctb]
 Repository: CRAN
-Date/Publication: 2019-09-05 11:50:02 UTC
+Date/Publication: 2020-02-04 13:10:02 UTC

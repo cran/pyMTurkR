@@ -9,9 +9,7 @@
 #' @aliases GetClient StartClient CheckAWSKeys
 #' @param sandbox A logical indicating whether the client should be in the
 #' sandbox environment or the live environment.
-#' @param profile A character string that specifies the profile to use
-#' from the .aws/credentials file, optional.
-#' @param restart.client A boolean that specifies whether to force the creation of a new client. This is useful if you want to change between sandbox and live environments within the same R session.
+#' @param restart.client A boolean that specifies whether to force the creation of a new client.
 #' @author Tyler Burleigh
 #' @references
 #' \href{https://aws.amazon.com/sdk-for-python/}{AWS SDK for Python (Boto3)}
@@ -28,14 +26,13 @@
 GetClient <-
 StartClient <-
 function(sandbox = getOption('pyMTurkR.sandbox', TRUE),
-         profile = getOption('pyMTurkR.profile', 'default'),
          restart.client = FALSE){
 
   if(!exists('pyMTurkR')){
     pyMTurkR <<- new.env()
   }
 
-  helper_mturk_client <- function(sandbox, profile, boto3){
+  helper_mturk_client <- function(sandbox, boto3){
 
     if(sandbox) endpoint_url <- 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
     else endpoint_url <- 'https://mturk-requester.us-east-1.amazonaws.com'
@@ -79,7 +76,7 @@ function(sandbox = getOption('pyMTurkR.sandbox', TRUE),
       boto3 <- reticulate::import("boto3")
 
       tryCatch({ # Try starting client
-        helper_mturk_client(sandbox, profile, boto3) # If the module loaded, start the client
+        helper_mturk_client(sandbox, boto3) # If the module loaded, start the client
       }, error = function(e) {
         message(paste(e, "    Unable to authenticate with credentials."))
       })
@@ -92,7 +89,7 @@ function(sandbox = getOption('pyMTurkR.sandbox', TRUE),
 }
 
 
-CheckAWSKeys <- function(profile = getOption('pyMTurkR.profile', 'default')){
+CheckAWSKeys <- function(){
   if(Sys.getenv("AWS_ACCESS_KEY_ID") != "" & Sys.getenv("AWS_SECRET_ACCESS_KEY") != ""){
     return(TRUE)
   } else {
