@@ -300,8 +300,9 @@ CreateHIT <-
     )
 
     # Validity check
-    if(class(response) == "try-error") {
+    if (inherits(response, "try-error")) {
       warning("Invalid Request")
+      warning(response)
     } else {
       HITs <- emptydf(1, 3, c("HITTypeId", "HITId", "Valid"))
       HITs$HITTypeId <- response$HIT$HITTypeId

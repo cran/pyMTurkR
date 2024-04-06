@@ -1,7 +1,7 @@
 Package: pyMTurkR
 Type: Package
 Title: A Client for the 'MTurk' Requester API
-Version: 1.1.5
+Version: 1.1.6
 Authors@R: c(person("Tyler", "Burleigh",
                     role = "aut", 
                     email = "tylerburleigh@gmail.com",
@@ -19,10 +19,10 @@ Description: Provides access to the latest 'Amazon Mechanical Turk' ('MTurk') <h
 License: GPL-2
 Encoding: UTF-8
 Imports: reticulate, curl, stats, utils, XML
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.1
 Suggests: testthat (>= 2.1.0), covr, knitr, rmarkdown
 NeedsCompilation: no
-Packaged: 2021-11-24 21:30:57 UTC; vineetb
+Packaged: 2024-04-06 18:17:45 UTC; vineetb
 Author: Tyler Burleigh [aut] (https://twitter.com/tylerburleigh),
   Thomas J. Leeper [aut] (<https://orcid.org/0000-0003-4097-6326>),
   Solomon Messing [ctb],
@@ -32,4 +32,4 @@ Author: Tyler Burleigh [aut] (https://twitter.com/tylerburleigh),
   Vineet Bansal [cre]
 Maintainer: Vineet Bansal <vineetbansal@protonmail.com>
 Repository: CRAN
-Date/Publication: 2021-11-25 08:40:06 UTC
+Date/Publication: 2024-04-06 18:40:02 UTC
